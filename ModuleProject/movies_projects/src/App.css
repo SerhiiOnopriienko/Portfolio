@@ -1,0 +1,97 @@
+.search-field {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 50%;
+}
+
+.search-input,
+.search-button {
+  height: 30px;
+}
+
+.search-input {
+  width: 100%;
+  margin-left: 10px;
+}
+
+.app-container {
+  display: flex;
+}
+
+.sidebar-container {
+  width: 20%;
+  margin: 0 20px 20px 0;
+}
+
+.main-content-container {
+  width: 80%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-container {
+  background-color: #00008b;
+}
+
+.footer-header {
+  color: #f8f8ff;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: space-around;
+}
+
+.social-links img {
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.auth-header {
+  text-align: center;
+}
+
+.birth-label {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 10px;
+}
+
+.birth-input {
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.movie-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+}
+.poster-image {
+  width: 25%;
+  margin: 0 20px 20px 0;
+}
+
+.card-content {
+  display: flex;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+}
