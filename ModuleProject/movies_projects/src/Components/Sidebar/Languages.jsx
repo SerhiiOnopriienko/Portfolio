@@ -12,6 +12,7 @@ export default function Languages() {
   let [selectedLanguage, setSelectedLanguage] = useState("");
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(filterLanguage([]));
     dispatch(filterLanguage(selectedLanguage));
   }, [selectedLanguage]);
 

@@ -11,17 +11,21 @@ import { useNavigate } from "react-router-dom";
 export default function Filters() {
   const dispatch = useDispatch();
 
-  const { selectedGenres, selectedLanguages } = useSelector(
+  const { selectedGenres, selectedLanguages, page } = useSelector(
     (state) => state.filtersReducer
   );
   const navigate = useNavigate();
   function onSubmit(e) {
     e.preventDefault();
     const with_genres = selectedGenres.map((genre) => genre.id).join(",");
-    const with_original_language = selectedLanguages[0].iso_639_1;
-    getFilteredMovies(with_genres, with_original_language).then((movies) => {
-      dispatch(loadFilteredMovies(movies));
-    });
+    const with_original_language = !selectedLanguages.length
+      ? "en"
+      : selectedLanguages[0].iso_639_1;
+    getFilteredMovies(page, with_genres, with_original_language).then(
+      (movies) => {
+        dispatch(loadFilteredMovies(movies));
+      }
+    );
     navigate("/main/filtered");
   }
   return (

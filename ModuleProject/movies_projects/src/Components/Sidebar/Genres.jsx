@@ -46,6 +46,7 @@ export default function Genres() {
   const { genres } = useSelector((state) => state.filtersReducer);
 
   useEffect(() => {
+    dispatch(filterGenres([]));
     dispatch(filterGenres(genreName));
   }, [genreName]);
   return (

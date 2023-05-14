@@ -4,6 +4,7 @@ import {
   FILTER_GENRES,
   FILTER_LANGUAGE,
   LOAD_FILTERED_MOVIES,
+  LOAD_PAGE_NUMBER,
 } from "../actions/filters";
 
 const initialState = {
@@ -13,11 +14,10 @@ const initialState = {
   selectedLanguages: [],
   totalCount: 0,
   movies: [],
+  page: 1,
 };
 
 export const filtersReducer = function (state = initialState, action) {
-  // console.log(action);
-  // console.log(state);
   switch (action.type) {
     case LOAD_GENRES:
       return {
@@ -48,6 +48,11 @@ export const filtersReducer = function (state = initialState, action) {
         ...state,
         movies: [...action.payload.movies.results],
         totalCount: action.payload.movies.totalCount,
+      };
+    case LOAD_PAGE_NUMBER:
+      return {
+        ...state,
+        page: action.payload.page,
       };
     default:
       return state;

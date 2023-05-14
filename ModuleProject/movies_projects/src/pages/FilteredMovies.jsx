@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -12,15 +12,15 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToFavorites } from "../actions/movies";
+import { loadPageNumber } from "../actions/filters";
 
 export default function FilteredMovies() {
-  const [page, setPage] = useState(1);
+  const [pageNumber, setPageNumber] = useState(1);
   const handleChange = (event, value) => {
-    setPage(value);
+    setPageNumber(value);
   };
   const { movies } = useSelector((state) => state.filtersReducer);
   const { totalCount } = useSelector((state) => state.filtersReducer);
-  console.log(totalCount);
 
   const navigate = useNavigate();
   function navigateToMovieId(movie) {
@@ -28,6 +28,10 @@ export default function FilteredMovies() {
   }
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadPageNumber(pageNumber));
+  }, [pageNumber]);
 
   function handleFavorites(movie) {
     dispatch(addToFavorites(movie));
@@ -90,7 +94,11 @@ export default function FilteredMovies() {
           );
         })}
       </div>
-      <Pagination count={totalCount} page={page} onChange={handleChange} />
+      <Pagination
+        count={totalCount}
+        page={pageNumber}
+        onChange={handleChange}
+      />
     </div>
   );
 }
