@@ -1,8 +1,7 @@
 import {
   LOAD_MOVIES,
-  SEARCH_MOVIES,
-  FILTER_MOVIES,
   ADD_TO_FAVORITES,
+  LOAD_PAGE_NUMBER,
 } from "../actions/movies";
 
 const initialState = {
@@ -12,16 +11,8 @@ const initialState = {
 };
 
 export const moviesReducer = function (state = initialState, action) {
-  // console.log(action);
-  // console.log(state);
   switch (action.type) {
     case LOAD_MOVIES:
-      return {
-        ...state,
-        movies: [...action.payload.movies.results],
-        totalCount: action.payload.movies.totalCount,
-      };
-    case SEARCH_MOVIES:
       return {
         ...state,
         movies: [...action.payload.movies.results],
@@ -34,6 +25,11 @@ export const moviesReducer = function (state = initialState, action) {
           ...state.favoriteMovies,
           action.payload.favoriteMovies,
         ],
+      };
+    case LOAD_PAGE_NUMBER:
+      return {
+        ...state,
+        page: action.payload.page,
       };
     default:
       return state;

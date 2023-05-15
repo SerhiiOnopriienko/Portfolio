@@ -1,9 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Box from "@mui/material/Box";
 import SearchIcon from "@mui/icons-material/Search";
 import Buttons from "./UI/Buttons";
 import { useDispatch } from "react-redux";
-import { searchMovies } from "../actions/movies";
+import { searchMovies } from "../actions/search";
 import { getSearchMovies } from "../api/moviesApi";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -17,14 +17,19 @@ export default function Header() {
     userName: { userName },
   } = useSelector((state) => state.userReducer);
 
+  const { page } = useSelector((state) => state.searchReducer);
+
   const navigate = useNavigate();
-  const onSubmit = function (e) {
+  const handleSubmit = function (e) {
     e.preventDefault();
-    getSearchMovies(search).then((movies) => {
-      dispatch(searchMovies(movies));
-    });
     navigate("/main/search");
   };
+
+  useEffect(() => {
+    getSearchMovies(search, page).then((movies) => {
+      dispatch(searchMovies(movies));
+    });
+  }, [page, dispatch, handleSubmit]);
 
   return (
     <Box sx={{ bgcolor: "#F8F8FF" }}>
@@ -37,7 +42,7 @@ export default function Header() {
           backgroundColor: "#00008B",
         }}
       >
-        <form onSubmit={onSubmit} className="search-field">
+        <form onSubmit={handleSubmit} className="search-field">
           <input
             className="search-input"
             type="text"

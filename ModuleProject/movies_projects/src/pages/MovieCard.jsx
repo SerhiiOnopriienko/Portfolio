@@ -5,7 +5,6 @@ import { getMovie } from "../api/moviesApi";
 export default function () {
   const [movie, setMovie] = useState([]);
   const { movieId } = useParams();
-  console.log(movie);
 
   useEffect(() => {
     getMovie(movieId).then((res) => setMovie(res));
