@@ -17,15 +17,6 @@ export default function Filters() {
   const navigate = useNavigate();
   function onSubmit(e) {
     e.preventDefault();
-    // const with_genres = selectedGenres.map((genre) => genre.id).join(",");
-    // const with_original_language = !selectedLanguages.length
-    //   ? "en"
-    //   : selectedLanguages[0].iso_639_1;
-    // getFilteredMovies(page, with_genres, with_original_language).then(
-    //   (movies) => {
-    //     dispatch(loadFilteredMovies(movies));
-    //   }
-    // );
     navigate("/main/filtered");
   }
 
@@ -39,7 +30,7 @@ export default function Filters() {
         dispatch(loadFilteredMovies(movies));
       }
     );
-  }, [dispatch, page, onSubmit]);
+  }, [dispatch, page]);
   return (
     <form onSubmit={onSubmit} className="sidebar-container">
       <h1>Filters</h1>

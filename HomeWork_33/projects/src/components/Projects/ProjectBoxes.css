@@ -1,0 +1,102 @@
+.project-boxes {
+    margin: 0 -8px;
+    overflow-y: auto;
+  }
+  .project-boxes.jsGridView {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .project-boxes.jsGridView .project-box-wrapper {
+    width: 33.3%;
+  }
+  .project-boxes.jsListView .project-box {
+    display: flex;
+    border-radius: 10px;
+    position: relative;
+  }
+  .project-boxes.jsListView .project-box > * {
+    margin-right: 24px;
+  }
+  .project-boxes.jsListView .more-wrapper {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+  }
+  .project-boxes.jsListView .project-box-content-header {
+    order: 1;
+    max-width: 120px;
+  }
+  .project-boxes.jsListView .project-box-header {
+    order: 2;
+  }
+  .project-boxes.jsListView .project-box-footer {
+    order: 3;
+    padding-top: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .project-boxes.jsListView .project-box-footer:after {
+    display: none;
+  }
+  .project-boxes.jsListView .participants {
+    margin-bottom: 8px;
+  }
+  .project-boxes.jsListView .project-box-content-header p {
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .project-boxes.jsListView .project-box-header > span {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    font-size: 12px;
+  }
+  .project-boxes.jsListView .box-progress-wrapper {
+    order: 3;
+    flex: 1;
+  }
+
+  @media screen and (max-width: 980px) {
+    .project-boxes.jsGridView .project-box-wrapper {
+      width: 50%;
+    }
+  }
+  @media screen and (max-width: 520px) {
+    .project-boxes {
+      overflow-y: visible;
+    }
+    .project-boxes.jsGridView .project-box-wrapper {
+      width: 100%;
+    }
+    .project-boxes.jsListView .project-box-header > span {
+      font-size: 10px;
+    }
+    .box-progress-header {
+      font-size: 12px;
+    }
+    .box-progress-percentage {
+      font-size: 10px;
+    }
+    .days-left {
+      font-size: 8px;
+      padding: 6px 6px;
+      text-align: center;
+    }
+    .project-boxes.jsListView .project-box > * {
+      margin-right: 10px;
+    }
+    .project-boxes.jsListView .more-wrapper {
+      right: 2px;
+      top: 10px;
+    }
+    .box-content-header {
+      font-size: 12px;
+      line-height: 16px;
+    }
+    .box-content-subheader {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }

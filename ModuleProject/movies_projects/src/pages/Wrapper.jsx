@@ -8,9 +8,9 @@ import { Outlet } from "react-router-dom";
 
 export default function Wrapper() {
   return (
-    <>
-      <CssBaseline />
-      <Container maxWidth="100vh">
+    <div style={{ padding: "0", margin: "0 -24px 0 -24px" }}>
+      <CssBaseline sx={{ p: "0" }} />
+      <Container maxWidth="100vh" sx={{ p: "0" }}>
         <Header />
         <div className="app-container">
           <Filters />
@@ -18,6 +18,6 @@ export default function Wrapper() {
         </div>
         <Footer />
       </Container>
-    </>
+    </div>
   );
 }

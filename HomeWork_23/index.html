@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Weather</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <dropdown>
+        <input id="toggle1" type="checkbox" checked />
+        <label for="toggle1" class="animate"
+          >Weather<i class="fa fa-list float-right"></i
+        ></label>
+        <ul class="animate">
+        </ul>
+      </dropdown>
+
+      <div id="weather" class="weather">
+        <div class="weather__loading">
+          <img src="./images/loading.gif" alt="Loading..." />
+        </div>
+      </div>
+
+      <div id="weather" class="weather">
+        <div class="weather__header">
+          <div class="weather__main">
+            <div class="weather__city"></div>
+            <div class="weather__status"></div>
+          </div>
+          <div class="weather__icon">
+            <img
+              alt="image"
+            />
+          </div>
+        </div>
+        <div class="weather__temp"></div>
+        <div class="weather__feels-like">Feels like: </div>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
