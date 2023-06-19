@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import Pagination from "@mui/material/Pagination";
-import { loadMovies } from "../../actions/movies";
-import { loadGenres, loadLanguages } from "../../actions/filters";
-import { getPopularMovies, getGenres, getLanguages } from "../../api/moviesApi";
-import Content from "../UI/Content";
+import Content from "../Content";
+import { fetchMovies } from "../../thunk/popularMovies";
+import { fetchGenres, fetchLanguages } from "../../thunk/filters";
 
 export default function MainContent() {
   const { movies, totalCount } = useSelector((state) => state.moviesReducer);
@@ -14,15 +13,9 @@ export default function MainContent() {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    getGenres().then((genres) => {
-      dispatch(loadGenres(genres));
-    });
-    getLanguages().then((languages) => {
-      dispatch(loadLanguages(languages));
-    });
-    getPopularMovies(page).then((movies) => {
-      dispatch(loadMovies(movies));
-    });
+    dispatch(fetchMovies({ page }));
+    dispatch(fetchGenres());
+    dispatch(fetchLanguages());
   }, [dispatch, page]);
 
   const handleChange = (event, value) => {
@@ -33,6 +26,7 @@ export default function MainContent() {
     <div className="main-content-container">
       <Content movies={movies} />
       <Pagination
+        sx={{ mt: "10px" }}
         count={totalCount > 500 ? 500 : totalCount}
         page={page}
         onChange={handleChange}

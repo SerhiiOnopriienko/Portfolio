@@ -3,11 +3,10 @@ import Box from "@mui/material/Box";
 import SearchIcon from "@mui/icons-material/Search";
 import Buttons from "./UI/Buttons";
 import { useDispatch } from "react-redux";
-import { searchMovies } from "../actions/search";
-import { getSearchMovies } from "../api/moviesApi";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { fetchSearchMovies } from "../thunk/searchMovies";
 
 export default function Header() {
   let [search, setSearch] = useState("");
@@ -22,13 +21,11 @@ export default function Header() {
   const navigate = useNavigate();
   const handleSubmit = function (e) {
     e.preventDefault();
-    navigate("/main/search");
+    navigate("search");
   };
 
   useEffect(() => {
-    getSearchMovies(search, page).then((movies) => {
-      dispatch(searchMovies(movies));
-    });
+    dispatch(fetchSearchMovies({ search, page }));
   }, [page, dispatch, handleSubmit]);
 
   return (

@@ -23,7 +23,7 @@ export const router = createBrowserRouter([
         element: <MainContent />,
       },
       {
-        path: "/main/:movieId",
+        path: ":movieId",
         element: <MovieCard />,
       },
       {
@@ -31,7 +31,7 @@ export const router = createBrowserRouter([
         element: <Favorites />,
       },
       {
-        path: "/main/favorites/:movieId",
+        path: "favorites/:movieId",
         element: <MovieCard />,
       },
       {
@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
         element: <Search />,
       },
       {
-        path: "/main/search/:movieId",
+        path: "search/:movieId",
         element: <MovieCard />,
       },
       {
@@ -47,7 +47,7 @@ export const router = createBrowserRouter([
         element: <FilteredMovies />,
       },
       {
-        path: "/main/filtered/:movieId",
+        path: "filtered/:movieId",
         element: <MovieCard />,
       },
       {

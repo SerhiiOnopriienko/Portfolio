@@ -3,7 +3,7 @@ import React from "react";
 export default function Footer() {
   return (
     <div className="footer-container">
-      <h2 className="footer-header">Our links</h2>
+      <h2 className="footer-header">Our links:</h2>
       <div className="social-links">
         <a href="https://www.facebook.com/" target="_blank">
           <img
@@ -13,7 +13,7 @@ export default function Footer() {
         </a>
         <a href="https://www.instagram.com/" target="_blank">
           <img
-            src="https://www.unipile.com/wp-content/uploads/2022/09/Logo-Instagram-noir-1.png"
+            src="https://www.svgrepo.com/show/365495/instagram-logo-thin.svg"
             alt="instagram-logo"
           />
         </a>

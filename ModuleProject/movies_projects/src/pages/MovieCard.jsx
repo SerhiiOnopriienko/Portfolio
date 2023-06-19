@@ -16,7 +16,11 @@ export default function () {
       <div className="card-content">
         <img
           className="poster-image"
-          src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+          src={
+            movie.poster_path
+              ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
+              : "https://m.media-amazon.com/images/I/614LWE5525L._AC_UF1000,1000_QL80_.jpg"
+          }
           alt="poster"
         />
         <p>{movie.overview}</p>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Content from "../Components/UI/Content";
+import Content from "../Components/Content";
 
 export default function Favorites() {
   const { favoriteMovies } = useSelector((state) => state.moviesReducer);

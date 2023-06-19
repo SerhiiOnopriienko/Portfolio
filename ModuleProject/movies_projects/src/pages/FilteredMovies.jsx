@@ -3,7 +3,7 @@ import Pagination from "@mui/material/Pagination";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { loadPageNumber } from "../actions/filters";
-import Content from "../Components/UI/Content";
+import Content from "../Components/Content";
 
 export default function FilteredMovies() {
   const [pageNumber, setPageNumber] = useState(1);

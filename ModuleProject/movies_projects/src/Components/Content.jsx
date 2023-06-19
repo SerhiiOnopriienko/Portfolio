@@ -4,11 +4,11 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
-import { CircularProgressWithLabel } from "./CircularProgressWithLabel";
+import { CircularProgressWithLabel } from "./UI/CircularProgressWithLabel";
 import IconButton from "@mui/material/IconButton";
 import GradeIcon from "@mui/icons-material/Grade";
 import { useNavigate } from "react-router-dom";
-import { addToFavorites } from "../../actions/movies";
+import { addToFavorites } from "../actions/movies";
 import { useDispatch } from "react-redux";
 
 export default function Content({ movies }) {
@@ -27,25 +27,41 @@ export default function Content({ movies }) {
     <div className="cards-container">
       {movies.map((movie) => {
         return (
-          <Card id={movie.id} sx={{ width: 250, m: "0 0 10px 10px" }}>
+          <Card key={movie.id} sx={{ width: 250, m: "0 0 10px 10px" }}>
             <CardActionArea>
-              <div onClick={() => navigateToMovieId(movie)}>
+              <div
+                style={{ height: "65vh" }}
+                onClick={() => navigateToMovieId(movie)}
+              >
                 <CardMedia
                   component="img"
                   height="340"
-                  image={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+                  image={
+                    movie.poster_path
+                      ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
+                      : "https://m.media-amazon.com/images/I/614LWE5525L._AC_UF1000,1000_QL80_.jpg"
+                  }
                   alt="poster"
                 />
                 <CircularProgressWithLabel value={movie.vote_average} />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
+                  <Typography
+                    sx={{ display: "inline-grid", mb: "10px" }}
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                  >
                     {movie.title}
                   </Typography>
                 </CardContent>
               </div>
 
               <div className="info">
-                <Typography variant="body2" color="text.secondary">
+                <Typography
+                  sx={{ ml: "10px" }}
+                  variant="body2"
+                  color="text.secondary"
+                >
                   {movie.release_date === undefined
                     ? ""
                     : `${new Intl.DateTimeFormat("en-US", {

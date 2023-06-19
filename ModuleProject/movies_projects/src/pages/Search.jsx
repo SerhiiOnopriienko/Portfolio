@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Pagination from "@mui/material/Pagination";
 import { useSelector } from "react-redux";
-import Content from "../Components/UI/Content";
+import Content from "../Components/Content";
 import { loadPageNumber } from "../actions/movies";
 import { useDispatch } from "react-redux";
 

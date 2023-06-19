@@ -21,7 +21,7 @@
 
 .sidebar-container {
   width: 20%;
-  margin: 0 20px 20px 0;
+  margin: 0 20px 20px 10px;
 }
 
 .main-content-container {
@@ -43,7 +43,6 @@
 
 .footer-header {
   color: #f8f8ff;
-  margin: 0 auto;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -54,8 +53,8 @@
 }
 
 .social-links img {
-  height: 100px;
-  margin-bottom: 20px;
+  width: 40px;
+  margin-bottom: 10px;
 }
 
 .auth-header {

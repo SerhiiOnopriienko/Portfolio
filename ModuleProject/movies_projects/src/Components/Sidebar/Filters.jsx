@@ -4,9 +4,8 @@ import Languages from "./Languages";
 import Buttons from "../UI/Buttons";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { loadFilteredMovies } from "../../actions/filters";
-import { getFilteredMovies } from "../../api/moviesApi";
 import { useNavigate } from "react-router-dom";
+import { fetchFilteredMovies } from "../../thunk/filteredMovies";
 
 export default function Filters() {
   const dispatch = useDispatch();
@@ -25,12 +24,10 @@ export default function Filters() {
     const with_original_language = !selectedLanguages.length
       ? "en"
       : selectedLanguages[0].iso_639_1;
-    getFilteredMovies(page, with_genres, with_original_language).then(
-      (movies) => {
-        dispatch(loadFilteredMovies(movies));
-      }
+    dispatch(
+      fetchFilteredMovies({ page, with_genres, with_original_language })
     );
-  }, [dispatch, page]);
+  }, [dispatch, page, onSubmit]);
   return (
     <form onSubmit={onSubmit} className="sidebar-container">
       <h1>Filters</h1>
