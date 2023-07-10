@@ -1,0 +1,46 @@
+<section class="todoapp">
+  <header class="header">
+    <h1>Todos</h1>
+    <input
+      autofocus
+      class="new-todo"
+      type="text"
+      placeholder="What needs to be done?"
+      [(ngModel)]="newTodoText"
+      (keyup.enter)="addTodo()"
+    />
+  </header>
+  <section class="main" *ngIf="allItems.length > 0">
+    <input
+      class="toggle-all"
+      id="toggle-all"
+      type="checkbox"
+      *ngIf="allItems.length"
+      [checked]="remaining === 0"
+      (click)="toggleAll()"
+    />
+    <label for="toggle-all">Mark all as complete</label>
+    <ul class="todo-list" *ngFor="let item of items">
+      <app-item
+        [item]="item"
+        (toggleCompletionEvent)="toggleCompletion($event)"
+        (editTodoEvent)="editTodo($event)"
+        (removeTodoEvent)="removeTodo($event)"
+        (updateEditingTodoEvent)="updateEditingTodo($event)"
+        (stopEditingEvent)="stopEditing($event)"
+        [editingTodoTitle]="editingTodoTitle"
+        (editingTodoTitleChangeEvent)="updateEditingTodoTitle($event)"
+      >
+      </app-item>
+    </ul>
+  </section>
+  <app-footer
+    [allItems]="allItems"
+    [remaining]="remaining"
+    [filter]="filter"
+    [completed]="completed"
+    (changeFilterEvent)="changeFilter($event)"
+    (removeCompletedEvent)="removeCompleted()"
+  >
+  </app-footer>
+</section>
