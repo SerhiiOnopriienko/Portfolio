@@ -4,3 +4,6 @@
 [submodule "steel-hugs-landing"]
 	path = steel-hugs-landing
 	url = https://github.com/baza-trainee/steel-hugs-landing.git
+[submodule "kavaleridze"]
+	path = kavaleridze
+	url = https://github.com/baza-trainee/kavaleridze.git
