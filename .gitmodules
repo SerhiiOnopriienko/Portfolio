@@ -1,3 +1,6 @@
 [submodule "dokoopy-frontend"]
 	path = dokoopy-frontend
 	url = https://github.com/baza-trainee/dokoopy-frontend.git
+[submodule "steel-hugs-landing"]
+	path = steel-hugs-landing
+	url = https://github.com/baza-trainee/steel-hugs-landing.git
