@@ -1,0 +1,3 @@
+[submodule "dokoopy-frontend"]
+	path = dokoopy-frontend
+	url = https://github.com/baza-trainee/dokoopy-frontend.git
