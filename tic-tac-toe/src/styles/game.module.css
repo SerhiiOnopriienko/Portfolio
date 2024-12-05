@@ -1,0 +1,128 @@
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  border-top: 1px solid #262626;
+  @media (min-width: 720px) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 720px) {
+    width: 50vw;
+    height: 100vh;
+    justify-content: space-between;
+  }
+}
+
+.player:first-child {
+  @media (min-width: 720px) {
+    border-right: 1px solid #262626;
+  }
+}
+
+.player p {
+  margin: 20px 0;
+  text-align: center;
+  font-size: 24px;
+}
+
+.infoText {
+  @media (min-width: 720px) {
+    display: flex;
+  }
+}
+
+.infoText p:first-child {
+  @media (min-width: 720px) {
+    margin-right: 10px;
+  }
+}
+
+.orangeText {
+  color: #d68a18;
+}
+
+.greenText {
+  color: #0d5619;
+}
+
+.redText {
+  color: #a03c1c;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  padding: 10px;
+  background-color: #313131;
+  position: relative;
+  width: fit-content;
+  border-radius: 10px;
+}
+
+.board :nth-child(1),
+.board :nth-child(2),
+.board :nth-child(3) {
+  border-top: none;
+}
+
+.board :nth-child(3),
+.board :nth-child(6),
+.board :nth-child(9) {
+  border-right: none;
+}
+
+.board :nth-child(7),
+.board :nth-child(8),
+.board :nth-child(9) {
+  border-bottom: none;
+}
+
+.board :nth-child(1),
+.board :nth-child(4),
+.board :nth-child(7) {
+  border-left: none;
+}
+
+.winningLine {
+  position: absolute;
+  background-color: white;
+  height: 5px;
+  width: 300px;
+  transform-origin: center;
+}
+
+.winningLine.horizontal {
+  width: 300px;
+  left: 10px;
+}
+
+.winningLine.vertical {
+  width: 5px;
+  height: 300px;
+  top: 10px;
+}
+
+.winningLine.diagonalLeft,
+.winningLine.diagonalRight {
+  width: 424px;
+  top: 160px;
+}
+
+.winningLine.diagonalLeft {
+  transform: rotate(45deg);
+  left: -50px;
+}
+
+.winningLine.diagonalRight {
+  transform: rotate(-45deg);
+  right: -50px;
+}
