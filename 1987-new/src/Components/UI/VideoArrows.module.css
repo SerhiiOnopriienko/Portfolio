@@ -1,0 +1,19 @@
+.prevVideoArrow,
+.nextVideoArrow {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  cursor: pointer;
+  @media (min-width: 1280px) {
+    display: block;
+  }
+}
+
+.prevVideoArrow {
+  left: 55px;
+}
+
+.nextVideoArrow {
+  right: 55px;
+}

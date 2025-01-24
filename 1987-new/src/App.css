@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "Morganite";
+  src: url("../src/Morganite/Morganite-Bold.ttf");
+}
+
+body {
+  background-color: #f2efea;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-family: "Morganite";
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.062px;
+  font-weight: 500;
+  font-size: 78px;
+  @media (min-width: 1280px) {
+    font-size: 118px;
+    font-weight: 700;
+  }
+  @media (min-width: 1920px) {
+    font-size: 148px;
+  }
+}
+
+h2 {
+  font-family: "Morganite";
+  font-weight: 500;
+  font-size: 44px;
+  @media (min-width: 1280px) {
+    font-size: 96px;
+    font-weight: 700;
+  }
+  @media (min-width: 1920px) {
+    font-size: 120px;
+  }
+}
+
+p {
+  font-family: "Oswald";
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 130%;
+  @media (min-width: 1280px) {
+    font-size: 18px;
+  }
+  @media (min-width: 1280px) {
+    font-size: 22px;
+  }
+  @media (min-width: 1920px) {
+    font-size: 28px;
+  }
+}

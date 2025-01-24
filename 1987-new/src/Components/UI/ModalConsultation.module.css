@@ -1,0 +1,97 @@
+.modalContainer {
+  width: 210px;
+  height: 220px;
+  position: fixed;
+  right: 0;
+  top: 110px;
+  padding: 20px;
+  background-color: rgba(1, 1, 1, 0.8);
+  z-index: 10000;
+  animation: formAppear 300ms linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px 0 0 4px;
+
+  @media (min-width: 768px) {
+    width: 274px;
+    height: 261px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 360px;
+    height: 336px;
+    top: 280px;
+  }
+
+  @media (min-width: 1920px) {
+    width: 361px;
+    height: 348px;
+    top: 400px;
+  }
+}
+
+@keyframes formAppear {
+  from {
+    transform: translateX(250px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.closeIcon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.textContainer p {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    font-size: 22px;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 32px;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 36px;
+  }
+}
+
+.textContainer p span {
+  color: #f39d38;
+  text-transform: uppercase;
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.textContainer p a {
+  color: inherit;
+  text-transform: uppercase;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.textContainer p:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.textContainer p:not(:last-child) a {
+  color: #f39d38;
+}

@@ -1,0 +1,131 @@
+.contactContainer {
+  padding: 0 20px;
+}
+
+.lowerContainer {
+  margin: 0 20px;
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  @media (min-width: 1280px) {
+    display: none;
+  }
+}
+
+.headText {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @media (min-width: 768px) {
+    width: 445px;
+    margin-bottom: 20px;
+  }
+}
+
+.headText p {
+  border: 1px solid #000000;
+  padding: 10px;
+  max-width: 40vw;
+  margin: 20px 0 0 0;
+  text-align: center;
+  font-size: 14px;
+  @media (min-width: 768px) {
+    width: 220px;
+  }
+  @media (min-width: 1280px) {
+    margin: 0;
+    border-bottom: none;
+    border-right: 1px solid #010101;
+    padding: 30px 16px;
+  }
+}
+
+.headText p span {
+  font-size: 14px;
+  color: #f39d38;
+}
+
+.contactButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #f39d38;
+  height: 57px;
+  cursor: pointer;
+  margin: 20px 0 40px 0;
+  color: #f39d38;
+  font-size: 26px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: none;
+  transition: all 0.3s;
+  @media (min-width: 768px) {
+    width: 155px;
+  }
+}
+
+.contactButton::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 110%;
+  top: 50%;
+  left: 50%;
+  background: #f39d38;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s;
+}
+
+.contactButton:hover {
+  color: #ffffff;
+}
+
+.contactButton:hover:after {
+  width: 100%;
+  opacity: 1;
+}
+
+.contactBigText {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.contactBigText h2 {
+  font-size: 62px;
+  font-weight: 500;
+  @media (min-width: 1280px) {
+    font-size: 118px;
+    font-weight: 700;
+  }
+  @media (min-width: 1920px) {
+    font-size: 148px;
+  }
+}
+
+.contactBigText h2 span {
+  color: #f39d38;
+  font-family: Morganite;
+  font-size: 62px;
+  @media (min-width: 1280px) {
+    font-size: 118px;
+  }
+  @media (min-width: 1920px) {
+    font-size: 148px;
+  }
+}
+
+.headText {
+  @media (min-width: 1280px) {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid hsl(0, 0%, 0%);
+  }
+  @media (min-width: 1920px) {
+    padding-left: 74px;
+  }
+}

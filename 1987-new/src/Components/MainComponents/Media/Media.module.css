@@ -1,0 +1,95 @@
+.getSocialContainer {
+  border-bottom: 1px solid #000000;
+  margin-top: -1px;
+}
+
+.socialText {
+  margin-bottom: 10px;
+  display: block;
+  position: relative;
+
+  @media (min-width: 1280px) {
+    margin-bottom: 0;
+    width: 630px;
+  }
+  @media (min-width: 1440px) {
+    width: 678px;
+  }
+  @media (min-width: 1920px) {
+    width: 750px;
+  }
+}
+
+.mobileSocialText {
+  @media (min-width: 1280px) {
+    display: none;
+  }
+}
+
+.desktopSocialText {
+  display: none;
+  @media (min-width: 1280px) {
+    display: block;
+  }
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.instagram {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 280px;
+  @media (min-width: 768px) {
+    justify-content: center;
+    max-width: 740px;
+  }
+  @media (min-width: 1280px) {
+    max-width: 930px;
+  }
+  @media (min-width: 1440px) {
+    max-width: 1100px;
+  }
+  @media (min-width: 1920px) {
+    max-width: 1345px;
+  }
+}
+
+.instagram a {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 90px;
+  max-width: 90px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  object-fit: cover;
+  @media (min-width: 768px) {
+    max-width: 212px;
+    max-height: 212px;
+  }
+  @media (min-width: 1280px) {
+    max-width: 280px;
+    max-height: 280px;
+    justify-content: center;
+    cursor: url("../../../images/instagram_cursor.svg"), auto;
+  }
+  @media (min-width: 1440px) {
+    max-width: 323px;
+    max-height: 323px;
+    margin: 0 30px 30px 0;
+  }
+  @media (min-width: 1920px) {
+    max-width: 408px;
+    max-height: 408px;
+    cursor: url("../../../images/instagram_cursor_wide.svg"), auto;
+  }
+}
+
+.instagram a:nth-child(3n) {
+  margin-right: 0;
+}

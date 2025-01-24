@@ -1,0 +1,252 @@
+.aboutContainer {
+  display: block;
+  @media (min-width: 1280px) {
+    padding-top: 63px;
+  }
+}
+
+.imageAndText {
+  overflow-x: hidden;
+  margin-top: -1px;
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.headerContainerAbout {
+  margin-top: 80px;
+  @media (min-width: 1280px) {
+    margin-top: 64px;
+  }
+}
+
+.aboutImageContainer {
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  @media (min-width: 768px) {
+    align-items: flex-start;
+    border: none;
+    min-width: 270px;
+    max-width: 270px;
+    height: 337px;
+    padding-top: 20px;
+    padding-right: 10px;
+    margin-bottom: 0;
+  }
+  @media (min-width: 1280px) {
+    min-width: 480px;
+    max-width: 480px;
+    padding-top: 35px;
+    padding-right: 15px;
+  }
+  @media (min-width: 1920px) {
+    min-width: 590px;
+    max-width: 590px;
+  }
+}
+
+.aboutImageContainer img {
+  border-top: 1px solid #010101;
+  border-bottom: 1px solid #010101;
+  @media (min-width: 768px) {
+    width: 100%;
+  }
+}
+
+.aboutTextsContainer {
+  padding: 0 20px;
+  @media (min-width: 768px) {
+    padding-top: 20px;
+  }
+  @media (min-width: 1280px) {
+    padding-top: 35px;
+  }
+}
+
+.tabletText {
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+  }
+  @media (min-width: 1280px) {
+    display: none;
+  }
+}
+
+.aboutTextsContainer p {
+  margin-bottom: 15px;
+  @media (min-width: 1280px) {
+    font-size: 20px;
+  }
+  @media (min-width: 1920px) {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+}
+.aboutTextsContainer p:nth-child(n + 4) {
+  @media (min-width: 768px) {
+    display: none;
+  }
+  @media (min-width: 1280px) {
+    display: block;
+  }
+}
+
+.aboutTextsContainer span {
+  font-size: 16px;
+  color: #f39d38;
+  @media (min-width: 1280px) {
+    font-size: 20px;
+  }
+}
+
+.aboutTextsContainer p:last-child {
+  text-align: end;
+}
+
+.CeoSighn {
+  font-family: Babylonica;
+  font-size: 42px !important;
+  font-weight: 400;
+  color: #f39d38;
+  text-align: end;
+  @media (min-width: 1280px) {
+    font-size: 52px !important;
+  }
+  @media (min-width: 1920px) {
+    font-size: 58px !important;
+  }
+}
+
+.aboutButtons {
+  padding: 0 20px;
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+  }
+  @media (min-width: 1920px) {
+    margin: 40px 0;
+  }
+}
+
+.aboutButtons a {
+  border: 1px solid #010101;
+  width: 100%;
+  padding: 10px 0;
+  font-weight: 400;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: none;
+  transition: all 0.3s;
+  @media (min-width: 768px) {
+    width: 154px;
+    font-size: 14px;
+    margin-right: 20px;
+  }
+  @media (min-width: 1280px) {
+    width: 270px;
+    padding: 18px 0;
+    margin-right: 30px;
+    margin-bottom: 0;
+  }
+  @media (min-width: 1440px) {
+    font-size: 22px;
+  }
+  @media (min-width: 1920px) {
+    padding: 28px 0;
+    width: 370px;
+  }
+}
+
+.aboutButtons a:last-child {
+  margin-right: 0;
+}
+
+.aboutButtons a::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 110%;
+  top: 50%;
+  left: 50%;
+  background: #010101;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-50%);
+  transition: all 0.3s;
+}
+
+.aboutButtons a:hover {
+  color: #ffffff;
+}
+
+.aboutButtons a:hover:after {
+  width: 100%;
+  opacity: 1;
+}
+
+.howToHelp {
+  border: 1px solid #f39d38 !important;
+  color: #f39d38;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: none;
+  transition: all 0.3s;
+}
+
+.howToHelp::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 110%;
+  top: 50%;
+  left: 50%;
+  background: #f39d38 !important;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-50%);
+  transition: all 0.3s;
+}
+
+.howToHelp:hover {
+  color: #ffffff;
+}
+
+.howToHelp:hover:after {
+  width: 100%;
+  opacity: 1;
+}
+
+.missionImageContainer {
+  width: 1000px;
+  @media (min-width: 1280px) {
+    width: 100vw;
+  }
+}
+
+.missionImageContainer video {
+  width: 100%;
+}
+
+.missionTextContainer {
+  margin-top: 10px;
+}
+
+.missionLastText {
+  text-align: start !important;
+}
+
+.missionImageAndText {
+  display: block;
+}

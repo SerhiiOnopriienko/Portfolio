@@ -1,0 +1,18 @@
+.displayOnlyOnMobile {
+  padding-top: 20px;
+  width: 100%;
+  @media (min-width: 768px) {
+    padding-top: 0;
+  }
+}
+
+.clientsSocialText {
+  padding: 0 20px;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.clientsLogos img {
+  width: 100%;
+}

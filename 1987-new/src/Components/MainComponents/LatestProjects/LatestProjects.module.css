@@ -1,0 +1,197 @@
+.latestContainer {
+  overflow-x: hidden;
+}
+
+.mainSlider {
+  margin: 20px;
+  width: calc(100vw + 300px);
+  margin-left: -155px;
+  @media (min-width: 768px) {
+    width: calc(100vw + 100px);
+    margin-left: -20px;
+    height: 367px;
+  }
+  @media (min-width: 1280px) {
+    height: 350px;
+    width: 91vw;
+    margin-top: 50px;
+    margin-left: 15px;
+  }
+  @media (min-width: 1920px) {
+    width: 1765px;
+    height: 460px;
+  }
+}
+
+.mainSlider div div div {
+  padding-right: 5px;
+  @media (min-width: 1920px) {
+    padding-right: 10px;
+  }
+}
+
+.mainSlider div div div div div p {
+  border: none;
+  color: #010101 !important;
+}
+
+.mainSlider div div div div div img {
+  filter: grayscale(100%);
+  @media (min-width: 768px) {
+    height: 350px;
+    object-fit: cover;
+  }
+  @media (min-width: 1280px) {
+    height: auto;
+  }
+  @media (min-width: 1920px) {
+    width: 100%;
+  }
+}
+
+.mainSlider div div div div div img:hover {
+  filter: grayscale(0%);
+}
+
+.slideLatest p {
+  font-size: 21px;
+  & span {
+    font-size: 12px;
+    vertical-align: super;
+  }
+}
+
+.prevArrow {
+  position: absolute;
+  bottom: -30px;
+  left: 213px;
+  @media (min-width: 1280px) {
+    bottom: 0;
+    left: 780px;
+  }
+  @media (min-width: 1380px) {
+    left: 830px;
+  }
+  @media (min-width: 1440px) {
+    left: 870px;
+    bottom: -20px;
+  }
+  @media (min-width: 1500px) {
+    left: 900px;
+  }
+  @media (min-width: 1600px) {
+    left: 970px;
+  }
+  @media (min-width: 1700px) {
+    left: 1040px;
+  }
+  @media (min-width: 1920px) {
+    left: 1180px;
+  }
+}
+
+.nextArrow {
+  position: absolute;
+  right: 225px;
+  bottom: -30px;
+  @media (min-width: 1280px) {
+    right: 280px;
+    bottom: 0;
+  }
+  @media (min-width: 1440px) {
+    right: 330px;
+    bottom: -20px;
+  }
+  @media (min-width: 1700px) {
+    right: 380px;
+  }
+  @media (min-width: 1920px) {
+    right: 450px;
+  }
+}
+
+.nextArrow p,
+.prevArrow p {
+  font-size: 20px;
+  @media (min-width: 1280px) {
+    font-size: 45px;
+  }
+  @media (min-width: 1920px) {
+    font-size: 60px;
+  }
+}
+
+.prevArrow p:hover,
+.nextArrow p:hover {
+  color: #f39d38;
+}
+
+.desktopContactInfo {
+  display: none;
+  @media (min-width: 1280px) {
+    display: block;
+  }
+}
+
+.leftTextDesktop {
+  margin-top: 50px;
+}
+
+.leftTextDesktop p {
+  margin-bottom: 30px;
+  @media (min-width: 1920px) {
+    font-size: 28px;
+  }
+}
+
+.leftTextDesktop p span {
+  color: #f39d38;
+  font-size: 22px;
+  @media (min-width: 1920px) {
+    font-size: 28px;
+  }
+}
+
+.contactDesktop {
+  border: 1px solid #f39d38;
+  padding: 10px 0;
+  cursor: pointer;
+  color: #f39d38;
+  font-size: 26px;
+  text-align: center;
+  width: 250px;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: none;
+  transition: all 0.3s;
+  @media (min-width: 1920px) {
+    font-size: 32px;
+    width: 343px;
+    padding: 20px 0;
+  }
+}
+
+.contactDesktop::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 110%;
+  top: 50%;
+  left: 50%;
+  background: #f39d38;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-50%);
+  transition: all 0.3s;
+}
+
+.contactDesktop:hover {
+  color: #ffffff;
+}
+
+.contactDesktop:hover:after {
+  width: 100%;
+  opacity: 1;
+}

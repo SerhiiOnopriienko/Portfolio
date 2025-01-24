@@ -1,0 +1,95 @@
+.modalWrapper {
+  position: fixed;
+  top: 80px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(1, 1, 1, 0.88);
+  z-index: 1000;
+  @media (min-width: 1280px) {
+    top: 64px;
+    cursor: url("../../images/close_cursor.svg"), auto;
+  }
+  @media (min-width: 1920px) {
+    top: 80px;
+  }
+}
+
+.closeIcon {
+  margin-top: 20px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  @media (min-width: 1280px) {
+    display: none;
+  }
+}
+
+.mainSlider {
+  position: absolute;
+  top: 0;
+  padding: 5px 20px;
+  @media (min-width: 1280px) {
+    padding: 40px 265px;
+  }
+}
+
+.mainSlider div div div div {
+  text-align: center;
+}
+
+.mainSlider div div div div img,
+.mainSlider div div div div video {
+  @media (min-width: 1280px) {
+    max-height: 80vh;
+    cursor: auto;
+    width: auto !important;
+  }
+}
+
+.nextArrow,
+.prevArrow {
+  position: absolute;
+  bottom: -30px;
+  @media (min-width: 1280px) {
+    bottom: -10px;
+  }
+  @media (min-width: 1440px) {
+    bottom: -20px;
+  }
+  @media (min-width: 1920px) {
+    bottom: -30px;
+  }
+}
+
+.nextArrow {
+  right: 20px;
+  @media (min-width: 1280px) {
+    right: 34%;
+    transform: translate(-50%);
+  }
+}
+
+.prevArrow {
+  @media (min-width: 1280px) {
+    left: 37%;
+    transform: translate(-50%);
+  }
+}
+
+.nextArrow p,
+.prevArrow p {
+  font-size: 20px;
+  color: #ffffff;
+  @media (min-width: 1280px) {
+    font-size: 45px;
+  }
+  @media (min-width: 1920px) {
+    font-size: 60px;
+  }
+}
+
+.prevArrow p:hover,
+.nextArrow p:hover {
+  color: #f39d38;
+}

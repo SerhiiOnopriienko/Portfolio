@@ -1,0 +1,228 @@
+.servicesContent {
+  margin: 0 20px;
+  position: relative;
+
+  @media (min-width: 768px) {
+    margin: 0 25px;
+  }
+  @media (min-width: 1920px) {
+    margin: 0 100px;
+  }
+}
+
+.servicesSubheader {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  @media (min-width: 768px) {
+    margin-top: 30px;
+    position: relative;
+  }
+  @media (min-width: 1280px) {
+    margin-top: 50px;
+    z-index: 10;
+  }
+  @media (min-width: 1920px) {
+    margin-top: 80px;
+  }
+}
+
+.servicesSubheader h2 {
+  width: 80%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 48px;
+
+  @media (min-width: 768px) {
+    font-size: 58px;
+    width: 100%;
+  }
+  @media (min-width: 1280px) {
+    font-size: 98px;
+  }
+  @media (min-width: 1440px) {
+    font-size: 118px;
+  }
+  @media (min-width: 1922px) {
+    font-size: 148px;
+  }
+}
+
+.servicesSubheader span {
+  color: #f39d38;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.sellHeader {
+  border-bottom: 2px solid #f39d38;
+}
+
+.sellHeader h3 {
+  font-size: 22px;
+  font-weight: 500;
+  @media (min-width: 1440px) {
+    font-size: 28px;
+  }
+  @media (min-width: 1922px) {
+    font-size: 32px;
+  }
+}
+
+.servicesTable {
+  @media (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 10;
+    position: relative;
+  }
+}
+
+.servicesSell {
+  margin-bottom: 15px;
+  @media (min-width: 768px) {
+    width: 50%;
+    padding-right: 20px;
+  }
+  @media (min-width: 1440px) {
+    padding-right: 30px;
+    width: 33%;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 10;
+  }
+  @media (min-width: 1922px) {
+    margin-bottom: 30px;
+  }
+}
+
+.servicesSell ul {
+  margin-left: 15px;
+}
+
+.servicesSell ul li {
+  font-size: 16px;
+  list-style: "• ";
+  @media (min-width: 1440px) {
+    font-size: 22px;
+  }
+  @media (min-width: 1922px) {
+    font-size: 28px;
+  }
+}
+
+.servicesButtonContainer {
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  @media (min-width: 1440px) {
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: -120px;
+    bottom: -135px;
+    background-image: url("../images/1987_services.svg");
+    background-size: contain;
+    width: 588px;
+    height: 590px;
+    z-index: 0;
+  }
+}
+
+.servicesButtonContainer a {
+  width: 100%;
+  border: 1px solid #f39d38;
+  margin-bottom: 20px;
+  font-size: 18px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s;
+  @media (min-width: 768px) {
+    width: 154px;
+    height: 46px;
+  }
+  @media (min-width: 1440px) {
+    width: 251px;
+    height: 58px;
+    font-size: 22px;
+    font-weight: 400;
+  }
+  @media (min-width: 1920px) {
+    width: 343px;
+    height: 72px;
+    font-size: 32px;
+  }
+}
+
+.servicesButtonContainer a:last-child {
+  margin-right: 0;
+}
+
+.servicesButtonContainer a::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 110%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-50%);
+  transition: all 0.3s;
+}
+
+.servicesButtonContainer a:hover:after {
+  width: 100%;
+  opacity: 1;
+}
+
+.servicesButtonContainer a:not(:last-child) {
+  @media (min-width: 768px) {
+    margin-right: 20px;
+  }
+  @media (min-width: 1440px) {
+    margin-right: 0;
+  }
+}
+
+.linkAbout {
+  background-color: rgba(1, 1, 1, 0.6);
+  color: #f39d38;
+}
+
+.linkAbout::after {
+  background: #f39d38;
+}
+
+.linkAbout:hover {
+  color: #010101;
+}
+
+.quot {
+  background-color: #f39d38;
+}
+
+.quot::after {
+  background: #010101;
+}
+
+.quot:hover {
+  color: #ffffff;
+}
+
+.servicesContact {
+  border-bottom: none;
+  @media (min-width: 1440px) {
+    width: 487px;
+    height: 489px;
+    right: -60px;
+    bottom: 0;
+  }
+}

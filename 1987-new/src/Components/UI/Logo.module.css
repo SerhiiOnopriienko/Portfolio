@@ -1,0 +1,31 @@
+.logo {
+  display: flex;
+}
+
+.logo p {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo p,
+.logo p span {
+  color: #f9a719;
+}
+
+.logo p {
+  font-family: Oswald;
+  font-size: 48px;
+  margin-right: 10px;
+}
+
+.logo p span:first-child {
+  font-family: Oswald;
+  font-size: 26px;
+  margin: 9px 0 -8px 0;
+}
+
+.logo p span:last-child {
+  font-family: Barlow;
+  font-size: 14px;
+  line-height: 16.8px;
+}
