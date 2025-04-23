@@ -1,6 +1,7 @@
 import {
   LOAD_MOVIES,
   ADD_TO_FAVORITES,
+  REMOVE_FROM_FAVORITES,
   LOAD_PAGE_NUMBER,
 } from "../actions/movies";
 
@@ -25,6 +26,13 @@ export const moviesReducer = function (state = initialState, action) {
           ...state.favoriteMovies,
           action.payload.favoriteMovies,
         ],
+      };
+    case REMOVE_FROM_FAVORITES:
+      return {
+        ...state,
+        favoriteMovies: state.favoriteMovies.filter(
+          (movie) => movie.id !== action.payload.movieId
+        ),
       };
     case LOAD_PAGE_NUMBER:
       return {

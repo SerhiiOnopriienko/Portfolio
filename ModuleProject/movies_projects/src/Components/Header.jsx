@@ -6,7 +6,8 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { fetchSearchMovies } from "../thunk/searchMovies";
+import { getSearchValue } from "../actions/search";
+import logo from "../assets/logo.png";
 
 export default function Header() {
   let [search, setSearch] = useState("");
@@ -16,17 +17,13 @@ export default function Header() {
     userName: { userName },
   } = useSelector((state) => state.userReducer);
 
-  const { page } = useSelector((state) => state.searchReducer);
-
   const navigate = useNavigate();
   const handleSubmit = function (e) {
     e.preventDefault();
+    dispatch(getSearchValue(search));
+    setSearch("");
     navigate("search");
   };
-
-  useEffect(() => {
-    dispatch(fetchSearchMovies({ search, page }));
-  }, [page, dispatch, handleSubmit]);
 
   return (
     <Box sx={{ bgcolor: "#F8F8FF" }}>
@@ -39,6 +36,9 @@ export default function Header() {
           backgroundColor: "#00008B",
         }}
       >
+        <Link to="/main">
+          <img className="logo" src={logo} alt="logo" />
+        </Link>
         <form onSubmit={handleSubmit} className="search-field">
           <input
             className="search-input"

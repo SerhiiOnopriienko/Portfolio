@@ -4,9 +4,12 @@ import { useSelector } from "react-redux";
 import Content from "../Components/Content";
 import { loadPageNumber } from "../actions/movies";
 import { useDispatch } from "react-redux";
+import { fetchSearchMovies } from "../thunk/searchMovies";
 
-export default function () {
-  const { movies, totalCount } = useSelector((state) => state.searchReducer);
+export default function Search() {
+  const { movies, totalCount, searchValue, page } = useSelector(
+    (state) => state.searchReducer
+  );
 
   const dispatch = useDispatch();
   const [pageNumber, setPageNumber] = useState(1);
@@ -16,16 +19,29 @@ export default function () {
 
   useEffect(() => {
     dispatch(loadPageNumber(pageNumber));
-  }, [pageNumber]);
+    dispatch(fetchSearchMovies({ search: searchValue, page: pageNumber }));
+  }, [searchValue, pageNumber]);
 
-  return (
-    <div className="main-content-container">
-      <Content movies={movies} />
-      <Pagination
-        count={totalCount > 500 ? 500 : totalCount}
-        page={pageNumber}
-        onChange={handleChange}
-      />
-    </div>
-  );
+  useEffect(() => {
+    setPageNumber(1);
+  }, [searchValue]);
+
+  if (movies.length) {
+    return (
+      <div className="main-content-container">
+        <Content movies={movies} />
+        <Pagination
+          count={totalCount > 500 ? 500 : totalCount}
+          page={pageNumber}
+          onChange={handleChange}
+        />
+      </div>
+    );
+  } else {
+    return (
+      <div className="main-content-container">
+        <h2>Nothing found</h2>
+      </div>
+    );
+  }
 }

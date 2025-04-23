@@ -42,7 +42,7 @@ export default function Genres() {
     } = event;
     setGenreName(value);
   };
-  // console.log(genreName);
+
   const { genres } = useSelector((state) => state.filtersReducer);
 
   useEffect(() => {
@@ -58,9 +58,7 @@ export default function Genres() {
     >
       <div>
         <FormControl sx={{ width: "100%" }}>
-          <InputLabel sx={{ width: "400px" }} id="demo-multiple-chip-label">
-            Genres
-          </InputLabel>
+          <InputLabel>Genres</InputLabel>
           <Select
             labelId="demo-multiple-chip-label"
             id="demo-multiple-chip"

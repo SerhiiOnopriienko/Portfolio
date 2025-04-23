@@ -8,7 +8,12 @@ import { Outlet } from "react-router-dom";
 
 export default function Wrapper() {
   return (
-    <div style={{ padding: "0", margin: "0 -24px 0 -24px" }}>
+    <div
+      style={{
+        padding: "0",
+        margin: "0 -24px 0 -24px",
+      }}
+    >
       <CssBaseline sx={{ p: "0" }} />
       <Container maxWidth="100vh" sx={{ p: "0" }}>
         <Header />

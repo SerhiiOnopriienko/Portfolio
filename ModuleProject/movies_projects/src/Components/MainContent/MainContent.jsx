@@ -13,10 +13,17 @@ export default function MainContent() {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    dispatch(fetchMovies({ page }));
     dispatch(fetchGenres());
     dispatch(fetchLanguages());
-  }, [dispatch, page]);
+  }, []);
+
+  useEffect(() => {
+    dispatch(fetchMovies({ page }));
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [page]);
 
   const handleChange = (event, value) => {
     setPage(value);
