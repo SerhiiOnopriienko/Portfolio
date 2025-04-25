@@ -73,6 +73,7 @@ function Menus({ children }) {
 
   const close = () => setOpenId("");
   const open = setOpenId;
+
   return (
     <MenusContext.Provider
       value={{ openId, setOpenId, close, open, position, setPosition }}
@@ -93,6 +94,7 @@ function Toggle({ id }) {
 
     openId === "" || openId !== id ? open(id) : close();
   };
+
   return (
     <StyledToggle onClick={handleClick}>
       <HiEllipsisVertical />
