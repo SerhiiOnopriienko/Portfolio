@@ -10,8 +10,6 @@ function Dashboard() {
   const { bookings, isLoading } = useRecentBookings();
   const { stays, confirmedStays, isLoading: isLoadingStays } = useRecentStays();
 
-  console.log(bookings, stays, confirmedStays);
-
   if (isLoading || isLoadingStays) return <Spinner />;
 
   return (
