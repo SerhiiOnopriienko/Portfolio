@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Logo from "./Logo";
 import MainNav from "./MainNav";
 import Uploader from "../data/Uploader";
+import { useUser } from "../features/authentication/useUser";
 
 const StyledSidebar = styled.aside`
   background-color: var(--color-grey-0);
@@ -14,12 +15,13 @@ const StyledSidebar = styled.aside`
 `;
 
 function Sidebar() {
+  const { user } = useUser();
+  console.log(user);
   return (
     <StyledSidebar>
       <Logo />
       <MainNav />
-
-      <Uploader />
+      {user.email === "seriyrayne@gmail.com" && <Uploader />}
     </StyledSidebar>
   );
 }

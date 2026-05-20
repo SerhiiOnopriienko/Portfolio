@@ -7,8 +7,8 @@ import Row from "../ui/Row";
 import Spinner from "../ui/Spinner";
 
 function Dashboard() {
-  const { bookings, isLoading } = useRecentBookings();
-  const { stays, confirmedStays, isLoading: isLoadingStays } = useRecentStays();
+  const { isLoading } = useRecentBookings();
+  const { isLoading: isLoadingStays } = useRecentStays();
 
   if (isLoading || isLoadingStays) return <Spinner />;
 
